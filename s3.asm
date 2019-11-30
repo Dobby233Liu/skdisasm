@@ -35,10 +35,10 @@ Vectors:	dc.l	Vectors,	EntryPoint,	ErrorTrap,	ErrorTrap	; 0
 		dc.l	ErrorTrap,	ErrorTrap,	ErrorTrap,	ErrorTrap	; 56
 		dc.l	ErrorTrap,	ErrorTrap,	ErrorTrap,	ErrorTrap	; 60
 Header:		dc.b "SEGA GENESIS    "
-Copyright:	dc.b "(C)SEGA 1993.NOV"
-Domestic_Name:	dc.b "SONIC THE             HEDGEHOG 3                "
+Copyright:	dc.b "(C)LWYS 2019.NOV"
+Domestic_Name:	dc.b "SONIC THE             HEDGEHOG 3  HACK          "
 Overseas_Name:	dc.b "SONIC THE             HEDGEHOG 3                "
-Serial_Number:	dc.b "GM MK-1079 -00"
+Serial_Number:	dc.b "GM MK-1079 -05"
 Checksum:	dc.w $A8F2
 Input:		dc.b "J               "
 ROMStartLoc:	dc.l Vectors
@@ -58,7 +58,7 @@ Unknown_Header:	dc.w 1
 		dc.l $200001
 		dc.l $2003FF
 		dc.b "                "
-Country_Code:	dc.b "U               "
+Country_Code:	dc.b "JUE             "
 ; ---------------------------------------------------------------------------
 
 ErrorTrap:
