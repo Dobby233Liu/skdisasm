@@ -655,7 +655,6 @@ Blue_spheres_stage_flag :=	ramaddr( $FFFFFFD4 ) ; byte ; set if a Blue Sphere sp
 V_blank_cycles :=		ramaddr( $FFFFFFD6 ) ; word ; the number of cycles between V-blanks
 Graphics_flags :=		ramaddr( $FFFFFFD8 ) ; byte ; bit 7 set := English system, bit 6 set := PAL system
 Debug_mode_flag :=		ramaddr( $FFFFFFDA ) ; word
-; Debug_mode_flag_test :=		ramaddr( $FFFFFFDB ) ; word
 Level_select_flag :=		ramaddr( $FFFFFFE0 ) ; byte
 Slow_motion_flag :=		ramaddr( $FFFFFFE1 ) ; byte
 Debug_cheat_flag :=		ramaddr( $FFFFFFE2 ) ; word ; set if the debug cheat's been entered
