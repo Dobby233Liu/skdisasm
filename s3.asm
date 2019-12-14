@@ -5198,13 +5198,9 @@ S3_Level_Select_Code:
 		bne.s	locret_42C8
 		move.w	#$101,(Level_select_flag).w
 		move.w	#$101,(Debug_cheat_flag).w
-		tst.w	(SK_alone_flag).w
-		beq.s	SKLevelSelectCheat_Debug
 		moveq	#$33,d0
 		bsr.w	Play_Sound_2
 
-SKLevelSelectCheat_Debug:
-		move.w	#$101,(Debug_mode_flag).w
 loc_42C2:
 		move.w	#0,(Level_select_cheat_counter).w
 
