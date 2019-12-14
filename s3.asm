@@ -8095,7 +8095,7 @@ loc_68F0:
 		moveq	#$27,d1
 		moveq	#$1B,d2
 		jsr	(Plane_Map_To_VRAM).l
-		moveq	#1,d3
+		moveq	#0,d3
 		bsr.w	LevelSelect_DrawSoundNumber
 		lea	($FFFF08C0).l,a1
 		lea	(MapEni_S2LevSelIcon).l,a0
