@@ -38,7 +38,8 @@ Header:		dc.b "SEGA GENESIS    "
 Copyright:	dc.b "(C)LWYS 2019.NOV"
 Domestic_Name:	dc.b "SONIC THE             HEDGEHOG 3  HACK          "
 Overseas_Name:	dc.b "SONIC THE             HEDGEHOG 3                "
-Serial_Number:	dc.b "GM MK-1079 -05"
+;Serial_Number:	dc.b "GM MK-1079 -05"
+Serial_Number:	dc.b "GM MK-1079 -00"
 Checksum:	dc.w $A8F2
 Input:		dc.b "J               "
 ROMStartLoc:	dc.l Vectors
@@ -3828,7 +3829,7 @@ SuperSonic_PalCycle_Revert:
 		bcc.s	loc_3194
 		; Bug?: this only clears the high byte of Palette_frame, causing subsequent
 		; fade-ins to pull color values from Pal_FromBlack
-		clr.b	(Palette_frame).w
+		move.w	#0,(Palette_frame).w  ; https://s3unlocked.blogspot.com/2017/11/return-of-scourge.html old disasm snippet
 		move.b	#0,(Super_palette_status).w
 
 loc_3194:
@@ -31899,7 +31900,7 @@ loc_1AC4E:
 		cmpi.w	#$3E0,(Camera_Y_pos).w
 		bcs.s	locret_1AC72
 		lea	(Normal_palette_line_4+$10).w,a1
-		move.w	#$B80,(a1)+
+		move.w	#$680,(a1)+ ; orig: b80
 		move.w	#$240,(a1)+
 		move.w	#$220,(a1)+
 		addq.b	#2,(Dynamic_resize_routine).w

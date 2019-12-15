@@ -13,7 +13,7 @@
 ; ===========================================================================
 
 ; Set this to 1 to fix some bugs in the driver.
-fix_sndbugs				=  0
+fix_sndbugs				=  1
 
 ; Function to make a little endian (z80) pointer
 k68z80Pointer function addr,((((addr&$7FFF)+$8000)<<8)&$FF00)+(((addr&$7FFF)+$8000)>>8)
@@ -88,7 +88,12 @@ DAC_Null_Chain macro rate,dacptr,linkptr
 ; Music Bank 1
 ; ---------------------------------------------------------------------------
 Snd_Bank1_Start:
-Snd_SKCredits:		binclude 	"Sound/Music/Credits.bin"
+Snd_SKCredits:		
+	if Sonic3_Complete
+		binclude 	"Sound/Music/3C Staff Roll.bin"
+	else
+		binclude 	"Sound/Music/Credits.bin"
+	endif
 Snd_GameOver:		binclude	"Sound/Music/Game Over.bin"
 Snd_Continue:		binclude	"Sound/Music/Continue.bin"
 Snd_Results:		binclude	"Sound/Music/Level Outro.bin"
