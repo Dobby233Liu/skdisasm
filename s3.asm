@@ -3826,9 +3826,9 @@ SuperSonic_PalCycle_Revert:
 		move.w	(Palette_frame).w,d0
 		subq.w	#6,(Palette_frame).w
 		bcc.s	loc_3194
-		; Bug: this only clears the high byte of Palette_frame, causing subsequent
+		; Bug?: this only clears the high byte of Palette_frame, causing subsequent
 		; fade-ins to pull color values from Pal_FromBlack
-		move.b	#0,(Palette_frame).w
+		clr.b	(Palette_frame).w
 		move.b	#0,(Super_palette_status).w
 
 loc_3194:
@@ -28772,7 +28772,7 @@ loc_19028:
 loc_19034:
 		; Bug: probably meant to be $30(a0), as Test_Ring_Collisions_AttractRing
 		; stores the ring's address in the ring status table there
-		move.w	$30,d0
+		move.w	$30(a0),d0
 		beq.s	loc_19040
 		movea.w	d0,a2
 		move.w	#0,(a2)
@@ -45169,14 +45169,14 @@ loc_2634C:
 
 sub_2636C:
 		; Bug: probably meant to be $30(a0)
-		lea	$30,a2
+		lea	$30(a0),a2
 		lea	(Player_1).w,a1
 		moveq	#3,d6
 		movem.l	d1-d3,-(sp)
 		bsr.s	sub_2638A
 		movem.l	(sp)+,d1-d3
 		; Bug: probably meant to be $34(a0)
-		lea	$34,a2
+		lea	$34(a0),a2
 		lea	(Player_2).w,a1
 		addq.b	#1,d6
 ; End of function sub_2636C
@@ -56747,7 +56747,7 @@ loc_303DA:
 		jsr	(Animate_Sprite).l
 		; Bug: probably meant to be 5(a0), and at some point the animation terminated
 		; with code $FC (increment routine counter) rather than $FB (move offscreen)
-		tst.b	5
+		tst.b	5(a0)
 		beq.s	loc_303F2
 		move.w	#$7F00,$10(a0)
 
@@ -100405,8 +100405,8 @@ loc_51D52:
 
 loc_51D78:
 		tst.b	$30(a0)
-		; Bug: this branch is inverted, freeing the player if they're _not_ being held
-		bne.s	loc_51D82
+		; Bug: this branch is previously inverted, freeing the player if they're _not_ being held
+		beq.s	loc_51D82
 		jsr	Restore_PlayerControl(pc)
 
 loc_51D82:
