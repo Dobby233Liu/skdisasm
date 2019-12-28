@@ -1,0 +1,87 @@
+for BizHawk, use Big Endian
+s3k: incorrectly access MY sandopolis act 7 without lag
+	set FFFE10 in ram 0804
+	start AIZ1
+	set FFFE10 in ram 0408. background will broke
+	set FFFE10 in ram 0805. AIZ music and card should start
+	set FFFE10 in ram 0508
+	set FFFE10 in ram 0806. sometimes chuck of background will appear
+	set FFFE10 in ram 0807. palette will broke
+	set FFFE10 in ram 0800
+	after done set FFFE10 0702(bad bg)-0704(?)-0801(acid or burn)
+	finally FFFE10 0800 and 0508
+	graphics will appear garbled
+	DON'T set FFFE10 to 0000 else game reset
+	youre' done
+S3K: access true sandopolis act 7...???
+	set FFFE10 in ram 0807
+	start AIZ1, should have AIZ card but correct music
+	i prefer set FFFE10 in ram 0800 and to travel deep using debug
+	set FFFE10 in ram 0801 (load bg)
+	done?
+	it will create a sandopolis act 2 but differ
+	to restart game FFFE10 -->> 0100
+S3K: camera stuck in sandopolis, for debug players: 
+	back into normal mode, when you in water turn edit mode. then you can move freely
+	; for me, the ring will shine along with the hud pal, and when you try to enter you didn't get teleported
+s3k: glitched island zone
+	set FFFE10 to 0000
+	start AIZ1
+	set FFFE10 to 0800
+	travel to Sonic and Tails intro region and place a badnik using edit mode
+	set FFFE10 to 0602
+	i prefer travel deep using debug
+	set FFFE10 to 0701
+	finally FFFE10 to 0001
+	ok
+s3k: lava palace zone, maybe
+	set FFFE10 to 0909
+	enter AIZ1
+	set FFFE10 to 0802
+	set FFFE10 to 0800
+	done?
+	set FFFE10 to 0901
+	set FFFE10 to 1000
+	set FFFE10 to 0900
+	glitched
+	set FFFE10 to 0909
+	congrats, ya make this messed
+	very like 3c build 0408
+s3k: lava and lava / acid sand zone
+	set FFFE10 to 0802
+	enter AIZ1
+	wait intro
+	set FFFE10 to 0909
+	set FFFE10 to 0812
+	set FFFE10 to 0909
+	set FFFE10 to 0910
+	em, play now. enjoy!
+s3k: WHATEVER zone zone
+	FFFE10 -->> 0100
+	enter AIZ1
+		   -->>	0D01 (enjoy wrong pal underwater)
+		   -->> 0001
+s3k dolius stage: slot gumball
+	FFFE10 -->> 1301
+	enter AIZ1
+	       -->> 1300
+s3k: the end?
+	FFFE10 -->>	0D01 (GLITCHES DATA SELECT!!!)
+	enter AIZ1
+		   -->>	0909
+		   -->>	0900
+	enjoy black screen of ded & knuckles
+	you couldn't even go outta here
+s3k: number froze island
+	FFFE10 -->>	0000 (or disable cheat)
+	enter AIZ1 and if required enable cheat
+		   -->>	0D01
+	if ded whenever drop, will enter ending!
+	if you're knux and you have all emearlds, blue knux will pliot the master emearld
+		"I'll miss you" - red knux, maybe
+	and those flickies are robadniks
+	hyper knux and sonic both appear, but i didn't get a screenshot
+s3k/s3c: holy shit don't work watery zone
+	FFFE10	-->>	0111
+	enter
+	FFFE10	-->>	0101 ; be fast!
