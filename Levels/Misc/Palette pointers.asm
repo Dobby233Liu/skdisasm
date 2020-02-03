@@ -1,5 +1,5 @@
 ; Palette pointers
-
+; code to handle s&t palette is loc_6310
 		dc.l Pal_Unknown1
 		dc.w $FC00
 		dc.w $1F
@@ -21,13 +21,13 @@
 		dc.l Pal_Unknown1
 		dc.w $FC00
 		dc.w $1F
-		dc.l Pal_Unknown1
+		dc.l Pal_Unknown1 ; -- $5
 		dc.w $FC00
 		dc.w $1F
-		dc.l Pal_Unknown1
+		dc.l Pal_Unknown1 ; $6
 		dc.w $FC00
 		dc.w $1F
-		dc.l Pal_Unknown1
+		dc.l Pal_Unknown1 ; $7
 		dc.w $FC00
 		dc.w $1F
 		dc.l Pal_AIZIntro
