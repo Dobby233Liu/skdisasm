@@ -5151,7 +5151,9 @@ Obj_TitleTailsPlane:
 		move.w	#$380,8(a0)
 		move.b	#$18,7(a0)
 		move.b	#8,6(a0)
-		move.l	#$4228,(a0)
+		move.l	#loc_4228,(a0)
+
+loc_4228:
 		tst.b	$30(a0)
 		bne.s	loc_424E
 		addq.w	#1,$10(a0)
@@ -9247,7 +9249,9 @@ Obj_SStage_7D70:
 		move.w	#$C589,$A(a0)
 		move.w	#$120,$10(a0)
 		move.w	#$94,$14(a0)
-		move.l	#$7DA2,(a0)
+		move.l	#loc_7DA2,(a0)
+
+loc_7DA2:
 		jmp	(Draw_Sprite).l
 ; ---------------------------------------------------------------------------
 Map_SSIcons:	include "General/Special Stage/Map - Icons.asm"
@@ -9379,7 +9383,9 @@ loc_7F6C:
 		move.w	#0,$38(a0)
 		bsr.w	sub_8402
 		move.b	#$FF,$3A(a0)
-		move.l	#$7F9A,(a0)
+		move.l	#loc_7F9A,(a0)
+
+loc_7F9A:
 		tst.w	(Special_stage_rate_timer).w
 		beq.s	loc_7FCE
 		subq.w	#1,(Special_stage_rate_timer).w
@@ -9673,7 +9679,9 @@ Obj_SStage_82EE:
 		move.w	#$70,$32(a0)
 		move.b	#-1,$3A(a0)
 		move.b	#1,$22(a0)
-		move.l	#$8332,(a0)
+		move.l	#loc_8332,(a0)
+
+loc_8332:
 		movea.w	$3E(a0),a1
 		move.w	$10(a1),$10(a0)
 		move.w	$14(a1),$14(a0)
@@ -11558,7 +11566,7 @@ loc_9BF4:
 		jsr	(Process_Sprites).l
 		jsr	(Render_Sprites).l
 		lea	($FFFFB378).w,a0
-		move.l	#$9DC2,(a0)
+		move.l	#loc_9DC2,(a0)
 		move.l	#Map_CompetitionSelect,$C(a0)
 		addi.w	#$C29F,$A(a0)
 		move.w	#$B0,$10(a0)
@@ -11718,6 +11726,8 @@ Obj_Competition_ZoneSelect:
 locret_9DC0:
 		rts
 ; ---------------------------------------------------------------------------
+
+loc_9DC2:
 		cmpi.w	#-$58,(H_scroll_buffer).w
 		bne.s	loc_9E06
 		tst.w	($FFFFEEE6).w
@@ -12193,7 +12203,7 @@ loc_A1D2:
 		lea	(RAM_start).l,a1
 		movea.w	#$20,a2
 		jsr	KosArt_To_VDP(pc)
-		move.l	#$952E,($FFFFEF44).w
+		move.l	#locret_952E,($FFFFEF44).w
 		move.b	#$1E,(V_int_routine).w
 		jsr	(Wait_VSync).l
 		lea	(ArtKos_CompetitionLevel).l,a0
@@ -12619,7 +12629,7 @@ loc_AA02:
 		lea	(RAM_start).l,a1
 		movea.w	#$20,a2
 		jsr	KosArt_To_VDP(pc)
-		move.l	#$952E,($FFFFEF44).w
+		move.l	#locret_952E,($FFFFEF44).w
 		move.b	#$1E,(V_int_routine).w
 		jsr	(Wait_VSync).l
 		lea	(ArtKos_CompetitionLevel).l,a0
@@ -13266,7 +13276,9 @@ Obj_Competition_B20C:
 loc_B244:
 		addi.w	#$29,d0
 		move.b	d0,$22(a0)
-		move.l	#$B252,(a0)
+		move.l	#loc_B252,(a0)
+
+loc_B252:
 		move.b	($FFFFEE5A).w,d0
 		cmp.b	$2E(a0),d0
 		bne.s	loc_B264
@@ -14227,7 +14239,9 @@ loc_C098:
 		move.w	d1,(Camera_X_pos_copy).w
 		neg.w	d1
 		move.w	d1,(H_scroll_buffer+2).w
-		move.l	#$C0AC,(a0)
+		move.l	#loc_C0AC,(a0)
+
+loc_C0AC:
 		tst.w	($FFFFEEE4).w
 		bne.s	loc_C0C4
 		btst	#4,(Ctrl_1_pressed).w
@@ -14410,7 +14424,9 @@ loc_C25E:
 		movea.l	d0,a1
 		move.b	2(a1),$35(a0)
 		move.b	3(a1),$37(a0)
-		move.l	#$C284,(a0)
+		move.l	#loc_C284,(a0)
+
+loc_C284:
 		clr.w	$16(a0)
 		movea.l	$30(a0),a1
 		move.b	($FFFFEF4B).w,d0
