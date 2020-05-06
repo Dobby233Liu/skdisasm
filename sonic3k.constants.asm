@@ -509,7 +509,7 @@ Anim_Counters =			ramaddr( $FFFFF7F0 ) ; $10 bytes ; each word stores data on an
 
 Sprite_table_buffer =		ramaddr( $FFFFF800 ) ; $280 bytes
 DMA_queue =			ramaddr( $FFFFFB00 ) ; $FC bytes ; stores all the VDP commands necessary to initiate a DMA transfer
-DMA_queue_slot =		ramaddr( $FFFFFBFC ) ; long ; points to the next free slot on the queue
+DMA_queue_slot =		ramaddr( $FFFFFBFC ) ; word ; points to the next free slot on the queue
 
 Normal_palette =		ramaddr( $FFFFFC00 ) ; $80 bytes
 Normal_palette_line_2 =		ramaddr( $FFFFFC20 ) ; $20 bytes
@@ -713,3 +713,6 @@ ArtTile_Shield                        = $079C
 ArtTile_Shield_Sparks                 = $07BB
 ArtTile_DashDust                      = $07E0
 ArtTile_DashDust_P2                   = $07F0
+
+VDP_Command_Buffer := DMA_queue
+VDP_Command_Buffer_Slot := DMA_queue_slot ; is a word
