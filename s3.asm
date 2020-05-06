@@ -53050,6 +53050,7 @@ loc_2CD06:
 loc_2CD1C:
 		jmp	(Draw_Sprite).l
 ; ---------------------------------------------------------------------------
+	trace
 TitleCard_LevelGfx:dc.l	ArtKosM_AIZTitleCard
 		dc.l ArtKosM_HCZTitleCard
 		dc.l ArtKosM_MGZTitleCard
